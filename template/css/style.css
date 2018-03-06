@@ -41,13 +41,16 @@
     text-shadow: 1px 1px 1px rgb(255, 255, 255);
   }
 
+/* font style for main heading on the index page */
+.display-4{
+    font-family: "LobsterTwo";
+    text-shadow: 1px 1px 1px rgb(255, 255, 255);   
+}
 
-  @media (max-width: 575.98px) { 
-      .sm-padding{
-          padding:0;
-          margin: 0;
-      }
-   }
+hr{
+    border-color: rgb(160, 160, 160);
+}
+
   
 
 
