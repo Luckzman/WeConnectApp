@@ -1,7 +1,14 @@
-/* *{
+/* font-face style for navbar brand and Jumbotron Heading */
+@font-face{
+    font-family: "LobsterTwo";
+    src: url("font/LobsterTwo-Regular.ttf");
+}
+
+/* This style will always keep footer to the button of the page using flexbox */
+*{
     margin: 0; 
     padding: 0;
-  } */
+  }
   html, body{
     height: 100%; 
   }
@@ -16,6 +23,14 @@
     background: #ddd;
   }
 
+  /* Add style to Navbar Brand Content */
+  .brand-style{
+    font-family: 'LobsterTwo' !important;
+    font-weight: 500;
+    font-size: 1.5rem;
+    color:#fff !important;
+    text-shadow: 1px 1px 1px rgb(255, 255, 255);
+  }
 
 
 
