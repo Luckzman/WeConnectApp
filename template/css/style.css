@@ -1,0 +1,47 @@
+/* *{
+    margin: 0; 
+    padding: 0;
+  } */
+  html, body{
+    height: 100%; 
+  }
+  body{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .content{
+    flex: 1;
+    background: #ddd;
+  }
+
+
+
+
+
+
+
+
+
+/* another way to alway keep footer at the button */
+/* * {
+    margin: 0;
+  }
+  html, body {
+    height: 100%;
+  }
+  .page-wrap {
+    min-height: 100%;
+    margin-bottom: -50px; /* Height of the footer */
+  /*}
+  .page-wrap:after {
+    content: "";
+    display: block;
+  }
+  .page-footer, .page-wrap:after {
+    height: 50px; 
+  }
+  .page-footer {
+    background: orange;
+  } */
