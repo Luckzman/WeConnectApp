@@ -27,8 +27,12 @@
     background-image: url("../img/12_bg.jpg") !important;
     background-size: cover;
     background-repeat: repeat;;
-    /* opacity: 0.6; */
+    
   }
+/* 
+  .bg-opacity{
+    opacity: 0.6;;
+  } */
 
   /* Add style to Navbar Brand Content */
   .brand-style{
