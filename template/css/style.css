@@ -29,10 +29,6 @@
     background-repeat: repeat;;
     
   }
-/* 
-  .bg-opacity{
-    opacity: 0.6;
-  } */
 
   /* Add style to Navbar Brand Content */
   .brand-style{
@@ -51,13 +47,18 @@
     text-shadow: 1px 1px 1px rgb(255, 255, 255);   
 }
 
+/* this style change the color of the <hr> element */
 hr{
     border-color: rgb(160, 160, 160);
 }
 
+/* remove the default background of the bootstrap jumbotron */
 .jumbotron{
   background: 0;
-  color:#fff !important;
+}
+
+.space-top{
+  margin-top: -20px;
 }
   
 
