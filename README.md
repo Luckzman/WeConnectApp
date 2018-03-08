@@ -1,9 +1,10 @@
 # WeConnectApp
 WeConnectApp provides a platform that brings businesses and individuals together. This platform creates awareness for businesses and gives the users the ability to write reviews about the businesses they have interacted with.  
 
-Click here to access the app https://luckzman.github.io/WEConnectApp/template/index.html
+Click here to access the app <https://luckzman.github.io/WEConnectApp/template/index.html>
 
 ## Description
+
 
 WeConnect is a simple app which simply connect its users to businesses (business ownner). This app is built with two types of users in mind.
 1. Non - Authenticated Users (Ordinary Users)
