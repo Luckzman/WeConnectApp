@@ -1,27 +1,17 @@
 import express from 'express';
-import business from '../models/business';
+import businessController from '../controllers/business';
 
 const businessRouter = express.Router();
 
-businessRouter.get('/', (req, res) => {
-  res.send(business);
-});
+businessRouter.get('/', businessController.getAllBusiness);
 
-businessRouter.post('/', (req, res) => {
-  res.status(200).json({ message: 'post request to register a business' });
-});
+businessRouter.post('/', businessController.postBusiness);
 
-businessRouter.get('/:id', (req, res) => {
-  res.status(200).json({ message: 'get t to get a particular business' });
-});
+businessRouter.get('/:id', businessController.getBusiness);
 
 
-businessRouter.put('/:id', (req, res) => {
-  res.status(200).json({ message: 'put request to update business' });
-});
+businessRouter.put('/:id', businessController.updateBusiness);
 
-businessRouter.delete('/:id', (req, res) => {
-  res.status(200).json({ message: 'delete request to remove a business' });
-});
+businessRouter.delete('/:id', businessController.deleteBusiness);
 
 export default businessRouter;
