@@ -3,6 +3,7 @@ node_js:
  - "6"
 notifications:
  email: false
+before_install: cd server
 cache:
  directories:
   - node_modules
