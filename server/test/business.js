@@ -11,6 +11,7 @@ describe('Business', () => {
       .get('/business')
       .end((err, res) => {
         res.should.have.status(200);
+        res.body.business.should.be.a('array');
         done();
       });
   });
