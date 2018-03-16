@@ -62,14 +62,15 @@ class business {
         businesses[i].category = req.body.category;
         businesses[i].location = req.body.location;
         businesses[i].imageUpload = req.body.imageUpload;
-        res.json({
+        return res.json({
           message: 'Business successfully updated',
+          business: businesses[i],
         });
       }
+      return res.status(404).json({
+        message: 'Not Found',
+      });
     }
-    res.status(404).json({
-      message: 'Not Found',
-    });
   }
 
   static deleteBusiness(req, res, next) {

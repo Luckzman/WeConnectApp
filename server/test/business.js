@@ -105,11 +105,23 @@ describe('PUT /Business/:id Route Test', () => {
     const id = 1;
     chai.request(app)
       .put(`/business/${id}`)
+      .send({
+        id: 1,
+        name: 'x-plug Nig. Ltd',
+        services: 'Wed Development',
+        phone_number: '09034222567',
+        email: 'xplug@gmail.com',
+        address: '1, xyz street, Surulere, Lagos',
+        category: 'Information Technology',
+        location: 'Lokoja',
+        image: 'url',
+      })
       .end((err, res) => {
         res.should.have.status(200);
         res.body.should.be.a('object');
-        res.body.business.should.have.property('name' && 'services' && 'phone_number' && 'email' && 'address' && 'category' && 'location');
+        res.body.should.have.property('message').eql('Business successfully updated');
         res.body.business.should.have.property('id').equal(id);
+        res.body.business.should.have.property('location').equal('Lokoja');
         done();
       });
   });
