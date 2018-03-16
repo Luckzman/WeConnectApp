@@ -3,12 +3,12 @@ node_js:
  - "6"
 notifications:
  email: false
-before_install: cd server
+before_install: 
+  - cd server
 cache:
  directories:
   - node_modules
 before_script:
-  - cd server
  - npm install
 script:
  - npm run test

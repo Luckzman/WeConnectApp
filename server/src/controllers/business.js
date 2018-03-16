@@ -8,31 +8,31 @@ class business {
     res.json({ business: businesses, message: 'Get All Request Successful' });
   }
 
-  static postBusiness(req, res, next) {
+  static postBusiness(req, res) {
     if (!req.body.name) {
-      res.json({ message: 'Enter Business Name' });
+      return res.json({ message: 'Enter Business Name' });
     }
     if (!req.body.services) {
-      res.json({ message: 'Enter Business Services' });
+      return res.json({ message: 'Enter Business Services' });
     }
     if (!req.body.phone_number) {
-      res.json({ message: 'Enter Business Phone Number' });
+      return res.json({ message: 'Enter Business Phone Number' });
     }
     if (!req.body.email) {
-      res.json({ message: 'Enter Business Email' });
+      return res.json({ message: 'Enter Business Email' });
     }
     if (!req.body.address) {
-      res.json({ message: 'Enter Business Address' });
+      return res.json({ message: 'Enter Business Address' });
     }
     if (!req.body.category) {
-      res.json({ message: 'Choose Business Category' });
+      return res.json({ message: 'Choose Business Category' });
     }
     if (!req.body.location) {
-      res.json({ message: 'Choose A Business Location' });
+      return res.json({ message: 'Choose A Business Location' });
     }
     businesses.push(req.body);
-    res.json({
-      message: 'Business sucessfully registered',
+    return res.json({
+      message: 'Business sucessfully registered!',
       business: req.body,
     });
   }
