@@ -18,6 +18,28 @@ describe('Business Route Test', () => {
   });
 });
 describe('Business Route Test', () => {
+  it('it should not POST a business with empty field', (done) => {
+    const businessTest = {
+      id: 1,
+      name: '',
+      services: 'Wed Development',
+      phone_number: '09034222567',
+      email: '',
+      address: '1, xyz street, Surulere, Lagos',
+      category: 'Information Technology',
+      location: 'Lagos',
+      image: 'url',
+    };
+    chai.request(app)
+      .post('/business')
+      .send(businessTest)
+      .end((err, res) => {
+        res.should.have.status(200);
+        res.body.should.be.a('object');
+        res.body.should.have.property('name' || 'services' || 'phone_number' || 'email' || 'address' || 'location' || 'image').not.eql('');
+        done();
+      });
+  });
   it('it should POST business', (done) => {
     const businessTest = {
       id: 1,

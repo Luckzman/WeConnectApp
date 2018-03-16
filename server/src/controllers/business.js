@@ -10,25 +10,25 @@ class business {
 
   static postBusiness(req, res) {
     if (!req.body.name) {
-      return res.json({ message: 'Enter Business Name' });
+      return res.json({ name: 'Enter Business Name' });
     }
     if (!req.body.services) {
-      return res.json({ message: 'Enter Business Services' });
+      return res.json({ services: 'Enter Business Services' });
     }
     if (!req.body.phone_number) {
-      return res.json({ message: 'Enter Business Phone Number' });
+      return res.json({ phone_number: 'Enter Business Phone Number' });
     }
     if (!req.body.email) {
-      return res.json({ message: 'Enter Business Email' });
+      return res.json({ email: 'Enter Business Email' });
     }
     if (!req.body.address) {
-      return res.json({ message: 'Enter Business Address' });
+      return res.json({ address: 'Enter Business Address' });
     }
     if (!req.body.category) {
-      return res.json({ message: 'Choose Business Category' });
+      return res.json({ category: 'Choose Business Category' });
     }
     if (!req.body.location) {
-      return res.json({ message: 'Choose A Business Location' });
+      return res.json({ location: 'Choose A Business Location' });
     }
     businesses.push(req.body);
     return res.json({
