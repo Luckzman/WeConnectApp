@@ -3,7 +3,8 @@ module.exports = {
     "rules" :{
        "linebreak-style": ["error","windows"],
        "no-unused-vars": 0,
-       "import/no-extraneous-dependencies": 0
+       "import/no-extraneous-dependencies": 0,
+       "consistent-return": 0
     },
     env:{
         mocha: true,

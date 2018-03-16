@@ -37,18 +37,18 @@ class business {
     });
   }
 
-  static getBusiness(req, res, next) {
+  static getBusiness(req, res) {
     for (let i = 0; i < businesses.length; i += 1) {
       if (businesses[i].id === parseInt(req.params.id, 10)) {
-        res.json({
+        return res.status(200).json({
           business: businesses[i],
-          message: 'Business successfully',
+          message: 'Business details',
         });
       }
+      return res.status(404).json({
+        message: 'Not Found',
+      });
     }
-    res.status(404).json({
-      message: 'Not Found',
-    });
   }
 
   static updateBusiness(req, res, next) {
