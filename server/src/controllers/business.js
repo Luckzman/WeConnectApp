@@ -77,14 +77,14 @@ class business {
     for (let i = 0; i < businesses.length; i += 1) {
       if (businesses[i].id === parseInt(req.params.id, 10)) {
         businesses.splice(i, 1);
-        res.json({
+        return res.json({
           message: 'Business successfully Deleted',
         });
       }
+      return res.status(404).json({
+        message: 'Not Found',
+      });
     }
-    res.status(404).json({
-      message: 'Not Found',
-    });
   }
 }
 

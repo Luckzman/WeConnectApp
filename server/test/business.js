@@ -126,4 +126,28 @@ describe('PUT /Business/:id Route Test', () => {
       });
   });
 });
+describe('PUT /Business/:id Route Test', () => {
+  it('it should PUT business detail', (done) => {
+    const businessTest = {
+      id: 1,
+      name: 'x-plug Nig. Ltd',
+      services: 'Wed Development',
+      phone_number: '09034222567',
+      email: 'xplug@gmail.com',
+      address: '1, xyz street, Surulere, Lagos',
+      category: 'Information Technology',
+      location: 'Lagos',
+      image: 'url',
+    };
+    const id = 1;
+    chai.request(app)
+      .delete(`/business/${id}`)
+      .end((err, res) => {
+        res.should.have.status(200);
+        res.body.should.be.a('object');
+        res.body.should.have.property('message').eql('Business successfully Deleted');
+        done();
+      });
+  });
+});
 
