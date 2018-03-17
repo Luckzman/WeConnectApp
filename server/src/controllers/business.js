@@ -3,33 +3,12 @@ import businesses from '../models/business';
 class business {
   static getAllBusiness(req, res, next) {
     if (businesses === '') {
-      res.json({ message: 'Business not available' });
+      return res.json({ message: 'Business not available' });
     }
-    res.json({ business: businesses, message: 'Get All Request Successful' });
+    return res.json({ business: businesses, message: 'Get All Request Successful' });
   }
 
   static postBusiness(req, res) {
-    if (!req.body.name) {
-      return res.json({ name: 'Enter Business Name' });
-    }
-    if (!req.body.services) {
-      return res.json({ services: 'Enter Business Services' });
-    }
-    if (!req.body.phone_number) {
-      return res.json({ phone_number: 'Enter Business Phone Number' });
-    }
-    if (!req.body.email) {
-      return res.json({ email: 'Enter Business Email' });
-    }
-    if (!req.body.address) {
-      return res.json({ address: 'Enter Business Address' });
-    }
-    if (!req.body.category) {
-      return res.json({ category: 'Choose Business Category' });
-    }
-    if (!req.body.location) {
-      return res.json({ location: 'Choose A Business Location' });
-    }
     businesses.push(req.body);
     return res.json({
       message: 'Business sucessfully registered!',
@@ -45,32 +24,32 @@ class business {
           message: 'Business details',
         });
       }
-      return res.status(404).json({
-        message: 'Not Found',
-      });
     }
+    return res.status(404).json({
+      message: 'Not Found',
+    });
   }
 
   static updateBusiness(req, res, next) {
     for (let i = 0; i < businesses.length; i += 1) {
       if (businesses[i].id === parseInt(req.params.id, 10)) {
-        businesses[i].name = req.body.name;
-        businesses[i].services = req.body.services;
-        businesses[i].phone_number = req.body.phone_number;
-        businesses[i].email = req.body.email;
-        businesses[i].address = req.body.address;
-        businesses[i].category = req.body.category;
-        businesses[i].location = req.body.location;
-        businesses[i].imageUpload = req.body.imageUpload;
+        businesses[i].name = req.body.name.toLowerCase();
+        businesses[i].services = req.body.services.toLowerCase();
+        businesses[i].phone_number = req.body.phone_number.toLowerCase();
+        businesses[i].email = req.body.email.toLowerCase();
+        businesses[i].address = req.body.address.toLowerCase();
+        businesses[i].category = req.body.category.toLowerCase();
+        businesses[i].location = req.body.location.toLowerCase();
+        businesses[i].imageUpload = req.body.imageUpload.toLowerCase();
         return res.json({
           message: 'Business successfully updated',
           business: businesses[i],
         });
       }
-      return res.status(404).json({
-        message: 'Not Found',
-      });
     }
+    return res.status(404).json({
+      message: 'Not Found',
+    });
   }
 
   static deleteBusiness(req, res, next) {
@@ -81,10 +60,39 @@ class business {
           message: 'Business successfully Deleted',
         });
       }
-      return res.status(404).json({
-        message: 'Not Found',
-      });
     }
+    return res.status(404).json({
+      message: 'Not Found',
+    });
+  }
+
+  static getReviews(req, res, next) {
+    for (let i = 0; i < businesses.length; i += 1) {
+      if (businesses[i].id === parseInt(req.params.id, 10)) {
+        return res.json({
+          reviews: businesses[i].reviews,
+          message: 'Review Success',
+        });
+      }
+    }
+    return res.status(404).json({
+      message: 'Business not found',
+    });
+  }
+
+  static postReviews(req, res) {
+    for (let i = 0; i < businesses.length; i += 1) {
+      if (businesses[i].id === parseInt(req.params.id, 10)) {
+        businesses[i].reviews.push(req.body);
+        return res.json({
+          reviews: businesses[i].reviews,
+          message: 'Add review successful',
+        });
+      }
+    }
+    return res.status(404).json({
+      message: 'Business not found',
+    });
   }
 }
 
