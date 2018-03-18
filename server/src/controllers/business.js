@@ -1,12 +1,38 @@
 import businesses from '../models/business';
+// import users from '../models/user';
 
 class business {
-  static getAllBusiness(req, res, next) {
-    if (businesses === '') {
-      return res.json({ message: 'Business not available' });
-    }
-    return res.json({ business: businesses, message: 'Get All Request Successful' });
-  }
+  // static SignUp(req, res) {
+  //   // const newUser = req.body;
+  //   // if (newUser) {
+  //   users.push(req.body);
+  //   return res.status(200).json({
+  //     message: 'Signup Successful',
+  //     user: req.body,
+  //     // error: false,
+  //   });
+  //   // }
+  //   // return res.status(400).json({
+  //   //   message: 'Signup Unsuccessful',
+  //   //   // error: true,
+  //   // });
+  // }
+
+  // static SignIn(req, res) {
+  //   for (let userCount = 0; userCount < users.length; userCount += 1) {
+  //     if (users[userCount].name.toLowerCase() === req.body.name.toLowerCase() &&
+  //       users[userCount].password.toLowerCase() === req.body.password.toLowerCase()) {
+  //       return res.status(202).json({
+  //         message: 'Login Successful',
+  //         error: false,
+  //       });
+  //     }
+  //     return res.status(401).json({
+  //       message: 'Login Unsuccessful',
+  //       error: true,
+  //     });
+  //   }
+  // }
 
   static postBusiness(req, res) {
     businesses.push(req.body);
@@ -14,6 +40,12 @@ class business {
       message: 'Business sucessfully registered!',
       business: req.body,
     });
+  }
+  static getAllBusiness(req, res, next) {
+    if (businesses === '') {
+      return res.json({ message: 'Business not available' });
+    }
+    return res.json({ business: businesses, message: 'Get All Request Successful' });
   }
 
   static getBusiness(req, res) {
@@ -26,21 +58,21 @@ class business {
       }
     }
     return res.status(404).json({
-      message: 'Not Found',
+      message: 'Not Founds',
     });
   }
 
   static updateBusiness(req, res, next) {
     for (let i = 0; i < businesses.length; i += 1) {
       if (businesses[i].id === parseInt(req.params.id, 10)) {
-        businesses[i].name = req.body.name.toLowerCase();
-        businesses[i].services = req.body.services.toLowerCase();
-        businesses[i].phone_number = req.body.phone_number.toLowerCase();
-        businesses[i].email = req.body.email.toLowerCase();
-        businesses[i].address = req.body.address.toLowerCase();
-        businesses[i].category = req.body.category.toLowerCase();
-        businesses[i].location = req.body.location.toLowerCase();
-        businesses[i].imageUpload = req.body.imageUpload.toLowerCase();
+        businesses[i].name = req.body.name;
+        businesses[i].services = req.body.services;
+        businesses[i].phone_number = req.body.phone_number;
+        businesses[i].email = req.body.email;
+        businesses[i].address = req.body.address;
+        businesses[i].category = req.body.category;
+        businesses[i].location = req.body.location;
+        businesses[i].imageUpload = req.body.imageUpload;
         return res.json({
           message: 'Business successfully updated',
           business: businesses[i],
@@ -62,7 +94,7 @@ class business {
       }
     }
     return res.status(404).json({
-      message: 'Not Found',
+      message: 'Not Foundsss',
     });
   }
 

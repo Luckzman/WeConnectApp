@@ -9,7 +9,7 @@ chai.use(chaiHttp);
 describe('GET /Business Route Test', () => {
   it('it should GET all the businesses', (done) => {
     chai.request(app)
-      .get('/business')
+      .get('/api/v1/business')
       .end((err, res) => {
         res.should.have.status(200);
         res.body.business.should.be.a('array');
@@ -31,12 +31,11 @@ describe('POST /Business Route Test', () => {
       image: 'url',
     };
     chai.request(app)
-      .post('/business')
+      .post('/api/v1/business')
       .send(businessTest)
       .end((err, res) => {
-        res.should.have.status(200);
+        res.should.have.status(400);
         res.body.should.be.a('object');
-        res.body.should.have.property('name' || 'services' || 'phone_number' || 'email' || 'address' || 'location' || 'image').not.eql('');
         done();
       });
   });
@@ -53,9 +52,13 @@ describe('POST /Business Route Test', () => {
       image: 'url',
     };
     chai.request(app)
-      .post('/business')
+      .post('/api/v1/business')
       .send(businessTest)
       .end((err, res) => {
+        // console.log(res.status);
+        // console.log('----------');
+        // console.log(res.body);
+        // console.log('------------');
         res.should.have.status(200);
         res.body.should.be.a('object');
         res.body.should.have.property('message').eql('Business sucessfully registered!');
@@ -79,7 +82,7 @@ describe('GET /Business/:id Route Test', () => {
     };
     const id = 1;
     chai.request(app)
-      .get(`/business/${id}`)
+      .get(`/api/v1/business/${id}`)
       .end((err, res) => {
         res.should.have.status(200);
         res.body.should.be.a('object');
@@ -104,7 +107,7 @@ describe('PUT /Business/:id Route Test', () => {
     };
     const id = 1;
     chai.request(app)
-      .put(`/business/${id}`)
+      .put(`/api/v1/business/${id}`)
       .send({
         id: 1,
         name: 'x-plug Nig. Ltd',
@@ -141,7 +144,7 @@ describe('PUT /Business/:id Route Test', () => {
     };
     const id = 1;
     chai.request(app)
-      .delete(`/business/${id}`)
+      .delete(`/api/v1/business/${id}`)
       .end((err, res) => {
         res.should.have.status(200);
         res.body.should.be.a('object');

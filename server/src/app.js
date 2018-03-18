@@ -4,8 +4,9 @@ import logger from 'morgan';
 import bodyParser from 'body-parser';
 import expressValidator from 'express-validator';
 import cors from 'cors';
-import businessRouter from './routes/business';
-import userRouter from './routes/user';
+import businessRouter from '../src/routes/business';
+import userRouter from '../src/routes/user';
+
 
 const app = express();
 app.use(cors());
@@ -15,11 +16,11 @@ app.use(bodyParser.json());
 app.use(expressValidator());
 app.use(express.static(path.join(__dirname, './../../template')));
 
-app.use('/business', businessRouter);
-app.use('/auth', userRouter);
+app.use('/api/v1/business', businessRouter);
+app.use('/api/v1/auth', userRouter);
 
 app.use((req, res, next) => {
-  const error = new Error('Not Found');
+  const error = new Error('Incorect URL - Please Check!');
   error.status = 404;
   next(error);
 });
