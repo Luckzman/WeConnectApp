@@ -103,7 +103,7 @@ class business {
       if (businesses[i].id === parseInt(req.params.id, 10)) {
         return res.json({
           reviews: businesses[i].reviews,
-          message: 'Review Success',
+          message: 'Success',
         });
       }
     }
@@ -118,7 +118,7 @@ class business {
         businesses[i].reviews.push(req.body);
         return res.json({
           reviews: businesses[i].reviews,
-          message: 'Add review successful',
+          message: 'Reviews successfuly added',
         });
       }
     }
