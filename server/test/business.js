@@ -189,12 +189,8 @@ describe('GET /Business/:id/reviews Route Test', () => {
     chai.request(app)
       .get(`/api/v1/business/${id}/reviews`)
       .end((err, res) => {
-        // console.log(res.body.business.reviews);
-        // console.log('----------------');
         res.should.have.status(200);
         res.body.should.be.a('object');
-        // res.body.business.reviews.should.have.property('id', 'name' && 'email' && 'reviews' && 'country');
-        // res.body.business.should.have.property('id').equal(id);
         res.body.should.have.property('message').eql('Success');
         done();
       });
@@ -210,7 +206,7 @@ describe('POST /Business/:id/reviews Route Test', () => {
       review: 'I love you company and services, just keep it up',
       country: 'USA',
     };
-    const id = 2;
+    const id = 1;
     chai.request(app)
       .post(`/api/v1/business/${id}/reviews`)
       .send(reviewsTest)
