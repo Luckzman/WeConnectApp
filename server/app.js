@@ -4,8 +4,8 @@ import logger from 'morgan';
 import bodyParser from 'body-parser';
 import expressValidator from 'express-validator';
 import cors from 'cors';
-import businessRouter from '../src/routes/business';
-import userRouter from '../src/routes/user';
+import businessRouter from '../server/routes/business';
+import userRouter from '../server/routes/user';
 
 
 const app = express();
@@ -14,7 +14,7 @@ app.use(logger('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(expressValidator());
-app.use(express.static(path.join(__dirname, './../../template')));
+app.use(express.static(path.join(__dirname, './../template')));
 
 app.use('/api/v1/business', businessRouter);
 app.use('/api/v1/auth', userRouter);
