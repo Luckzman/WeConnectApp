@@ -3,7 +3,7 @@ const users = [{
   name: 'CeeCee',
   password: '12345',
   password2: '12345',
-  phone_number: '09034222567',
+  phoneNumber: '09034222567',
   email: 'ceecee@gmail.com',
 },
 {
@@ -11,7 +11,7 @@ const users = [{
   name: 'efe',
   password: '11111',
   password2: '11111',
-  phone_number: '09034222567',
+  phoneNumber: '09034222567',
   email: 'efe@gmail.com',
 }];
 

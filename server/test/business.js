@@ -56,10 +56,6 @@ describe('POST /Business Route Test', () => {
       .post('/api/v1/business')
       .send(businessTest)
       .end((err, res) => {
-        // console.log(res.status);
-        // console.log('----------');
-        // console.log(res.body);
-        // console.log('------------');
         res.should.have.status(200);
         res.body.should.be.a('object');
         res.body.should.have.property('message').eql('Business sucessfully registered!');
@@ -287,9 +283,7 @@ describe('GET /Business?category=information technology Route Test', () => {
     chai.request(app)
       .get('/api/v1/business?category=information technology')
       .end((err, res) => {
-        // res.should.have.status(200);
         res.body.should.be.a('object');
-        // res.body.should.have.property('message').eql('Success');
         done();
       });
   });
