@@ -9,7 +9,7 @@ const businessRouter = express.Router();
 
 businessRouter.get('/', businessValidator.queryBusinessByCategory, businessValidator.queryBusinessByLocation, businessController.getAllBusiness);
 
-businessRouter.post('/', businessValidator.postBusiness, businessController.postBusiness);
+businessRouter.post('/', businessValidator.createBusiness, businessController.createBusiness);
 
 businessRouter.get('/:id', businessController.getBusiness);
 
@@ -19,6 +19,6 @@ businessRouter.delete('/:id', businessController.deleteBusiness);
 
 businessRouter.get('/:id/reviews', businessController.getReviews);
 
-businessRouter.post('/:id/reviews', businessValidator.postReview, businessController.postReviews);
+businessRouter.post('/:id/reviews', businessValidator.createReview, businessController.createReviews);
 
 export default businessRouter;

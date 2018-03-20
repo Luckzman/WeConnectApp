@@ -1,22 +1,46 @@
 import businesses from '../models/business';
 
-class business {
-  static postBusiness(req, res) {
-    businesses.push(req.body);
+const business = {
+  createBusiness(req, res) {
+    const {
+      id,
+      name,
+      services,
+      phoneNumber,
+      email,
+      address,
+      category,
+      location,
+      image,
+    } = req.body;
+
+    const businessBody = {
+      id,
+      name,
+      services,
+      phoneNumber,
+      email,
+      address,
+      category,
+      location,
+      image,
+    };
+
+    businesses.push(businessBody);
     return res.json({
       message: 'Business sucessfully registered!',
-      business: req.body,
+      business: businessBody,
     });
-  }
+  },
 
-  static getAllBusiness(req, res, next) {
+  getAllBusiness(req, res) {
     if (businesses === '') {
       return res.json({ message: 'Business not available' });
     }
     return res.json({ business: businesses, message: 'Get All Request Successful' });
-  }
+  },
 
-  static getBusiness(req, res) {
+  getBusiness(req, res) {
     for (let i = 0; i < businesses.length; i += 1) {
       if (businesses[i].id === parseInt(req.params.id, 10)) {
         return res.status(200).json({
@@ -29,14 +53,14 @@ class business {
     return res.status(404).json({
       message: 'Not Founds',
     });
-  }
+  },
 
-  static updateBusiness(req, res, next) {
+  updateBusiness(req, res, next) {
     for (let i = 0; i < businesses.length; i += 1) {
       if (businesses[i].id === parseInt(req.params.id, 10)) {
         businesses[i].name = req.body.name;
         businesses[i].services = req.body.services;
-        businesses[i].phone_number = req.body.phone_number;
+        businesses[i].phoneNumber = req.body.phoneNumber;
         businesses[i].email = req.body.email;
         businesses[i].address = req.body.address;
         businesses[i].category = req.body.category;
@@ -51,9 +75,9 @@ class business {
     return res.status(404).json({
       message: 'Not Found',
     });
-  }
+  },
 
-  static deleteBusiness(req, res, next) {
+  deleteBusiness(req, res, next) {
     for (let i = 0; i < businesses.length; i += 1) {
       if (businesses[i].id === parseInt(req.params.id, 10)) {
         businesses.splice(i, 1);
@@ -65,9 +89,9 @@ class business {
     return res.status(404).json({
       message: 'Not Foundsss',
     });
-  }
+  },
 
-  static getReviews(req, res, next) {
+  getReviews(req, res, next) {
     for (let i = 0; i < businesses.length; i += 1) {
       if (businesses[i].id === parseInt(req.params.id, 10)) {
         return res.json({
@@ -79,9 +103,9 @@ class business {
     return res.status(404).json({
       message: 'Business not found',
     });
-  }
+  },
 
-  static postReviews(req, res) {
+  createReviews(req, res) {
     for (let i = 0; i < businesses.length; i += 1) {
       if (businesses[i].id === parseInt(req.params.id, 10)) {
         businesses[i].reviews.push(req.body);
@@ -94,7 +118,7 @@ class business {
     return res.status(404).json({
       message: 'Business not found',
     });
-  }
-}
+  },
+};
 
 export default business;
