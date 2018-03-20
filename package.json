@@ -7,7 +7,7 @@
     "start": "nodemon server/app.js --exec babel-node",
     "build": "babel server -d dist",
     "serve": "node dist/app.js",
-    "test": "mocha --require babel-register --timeout 10000"
+    "test": "mocha --require babel-register server/test --timeout 10000"
   },
   "keywords": [],
   "author": "",

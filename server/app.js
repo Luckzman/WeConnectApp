@@ -4,9 +4,7 @@ import logger from 'morgan';
 import bodyParser from 'body-parser';
 import expressValidator from 'express-validator';
 import cors from 'cors';
-import businessRouter from '../server/routes/business';
-import userRouter from '../server/routes/user';
-
+import Router from '../server/routes/index';
 
 const app = express();
 app.use(cors());
@@ -16,8 +14,7 @@ app.use(bodyParser.json());
 app.use(expressValidator());
 app.use(express.static(path.join(__dirname, './../template')));
 
-app.use('/api/v1/business', businessRouter);
-app.use('/api/v1/auth', userRouter);
+app.use('/', Router);
 
 app.use((req, res, next) => {
   const error = new Error('Incorect URL - Please Check!');
