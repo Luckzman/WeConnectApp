@@ -24,7 +24,7 @@ describe('POST /Business Route Test', () => {
       id: 1,
       name: '',
       services: 'Wed Development',
-      phone_number: '09034222567',
+      phoneNumber: '09034222567',
       email: '',
       address: '1, xyz street, Surulere, Lagos',
       category: 'Information Technology',
@@ -45,7 +45,7 @@ describe('POST /Business Route Test', () => {
       id: 1,
       name: 'x-plug Nig. Ltd',
       services: 'Wed Development',
-      phone_number: '09034222567',
+      phoneNumber: '09034222567',
       email: 'xplug@gmail.com',
       address: '1, xyz street, Surulere, Lagos',
       category: 'Information Technology',
@@ -59,7 +59,7 @@ describe('POST /Business Route Test', () => {
         res.should.have.status(200);
         res.body.should.be.a('object');
         res.body.should.have.property('message').eql('Business sucessfully registered!');
-        res.body.business.should.have.property('name' && 'services' && 'phone_number' && 'email' && 'address' && 'category' && 'location');
+        res.body.business.should.have.property('name' && 'services' && 'phoneNumber' && 'email' && 'address' && 'category' && 'location');
         done();
       });
   });
@@ -71,7 +71,7 @@ describe('GET /Business/:id Route Test', () => {
       id: 1,
       name: 'x-plug Nig. Ltd',
       services: 'Wed Development',
-      phone_number: '09034222567',
+      phoneNumber: '09034222567',
       email: 'xplug@gmail.com',
       address: '1, xyz street, Surulere, Lagos',
       category: 'Information Technology',
@@ -97,7 +97,7 @@ describe('PUT /Business/:id Route Test', () => {
       id: 1,
       name: 'x-plug Nig. Ltd',
       services: 'Wed Development',
-      phone_number: '09034222567',
+      phoneNumber: '09034222567',
       email: 'xplug@gmail.com',
       address: '1, xyz street, Surulere, Lagos',
       category: 'Information Technology',
@@ -111,7 +111,7 @@ describe('PUT /Business/:id Route Test', () => {
         id: 1,
         name: 'x-plug Nig. Ltd',
         services: 'Wed Development',
-        phone_number: '09034222567',
+        phoneNumber: '09034222567',
         email: 'xplug@gmail.com',
         address: '1, xyz street, Surulere, Lagos',
         category: 'Information Technology',
@@ -135,7 +135,7 @@ describe('DELETE /Business/:id Route Test', () => {
       id: 1,
       name: 'x-plug Nig. Ltd',
       services: 'Wed Development',
-      phone_number: '09034222567',
+      phoneNumber: '09034222567',
       email: 'xplug@gmail.com',
       address: '1, xyz street, Surulere, Lagos',
       category: 'Information Technology',
@@ -160,7 +160,7 @@ describe('GET /Business/:id/reviews Route Test', () => {
       id: 1,
       name: 'x-plug Nig. Ltd',
       services: 'Wed Development',
-      phone_number: '09034222567',
+      phoneNumber: '09034222567',
       email: 'xplug@gmail.com',
       address: '1, xyz street, Surulere, Lagos',
       category: 'Information Technology',
@@ -221,7 +221,7 @@ describe('GET /Business?location=lagos Route Test', () => {
       id: 1,
       name: 'x-plug Nig. Ltd',
       services: 'Wed Development',
-      phone_number: '09034222567',
+      phoneNumber: '09034222567',
       email: 'xplug@gmail.com',
       address: '1, xyz street, Surulere, Lagos',
       category: 'Information Technology',
@@ -245,7 +245,7 @@ describe('GET /Business?location=lagos Route Test', () => {
     chai.request(app)
       .get('/api/v1/business?location=lagos')
       .end((err, res) => {
-        // res.should.have.status(200);
+        res.should.have.status(200);
         res.body.should.be.a('object');
         res.body.should.have.property('message').eql('Success');
         done();
@@ -259,7 +259,7 @@ describe('GET /Business?category=information technology Route Test', () => {
       id: 1,
       name: 'x-plug Nig. Ltd',
       services: 'Wed Development',
-      phone_number: '09034222567',
+      phoneNumber: '09034222567',
       email: 'xplug@gmail.com',
       address: '1, xyz street, Surulere, Lagos',
       category: 'Information Technology',
