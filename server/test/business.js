@@ -1,7 +1,7 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
-import app from '../src/app';
-import business from '../src/models/business';
+import app from '../app';
+import business from '../models/business';
 
 const should = chai.should();
 

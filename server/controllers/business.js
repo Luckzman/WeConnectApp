@@ -1,5 +1,4 @@
 import businesses from '../models/business';
-// import users from '../models/user';
 
 class business {
   static postBusiness(req, res) {
@@ -9,6 +8,7 @@ class business {
       business: req.body,
     });
   }
+
   static getAllBusiness(req, res, next) {
     if (businesses === '') {
       return res.json({ message: 'Business not available' });
@@ -25,6 +25,7 @@ class business {
         });
       }
     }
+
     return res.status(404).json({
       message: 'Not Founds',
     });

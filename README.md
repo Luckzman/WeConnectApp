@@ -1,4 +1,6 @@
 # WeConnectApp
+[![Build Status](https://travis-ci.org/Luckzman/WeConnectApp.svg?branch=development)](https://travis-ci.org/Luckzman/WeConnectApp)
+[![Coverage Status](https://coveralls.io/repos/github/Luckzman/WeConnectApp/badge.svg?branch=development)](https://coveralls.io/github/Luckzman/WeConnectApp?branch=development)
 WeConnectApp provides a platform that brings businesses and individuals together. This platform creates awareness for businesses and gives the users the ability to write reviews about the businesses they have interacted with.  
 
 Click here to access the app <https://luckzman.github.io/WeConnectApp/template/index.html>
