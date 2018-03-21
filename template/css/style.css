@@ -61,30 +61,24 @@ hr{
   margin-top: -20px;
 }
   
+.see-more-link{
+  font-size: 80%;
+  font-weight: 400;
+  color: #6c757d!important;
+  float: right!important;
+}
 
+.see-more-link:hover{
+  color: #abb1b6!important;
+  text-decoration-style: solid;
+  text-decoration-line: underline;
+  text-decoration-color: #abb1b6;
+}
 
+profile-modal{
+  max-height: 90%!important;
+}
 
   
 
 
-/* another way to alway keep footer at the button */
-/* * {
-    margin: 0;
-  }
-  html, body {
-    height: 100%;
-  }
-  .page-wrap {
-    min-height: 100%;
-    margin-bottom: -50px; /* Height of the footer */
-  /*}
-  .page-wrap:after {
-    content: "";
-    display: block;
-  }
-  .page-footer, .page-wrap:after {
-    height: 50px; 
-  }
-  .page-footer {
-    background: orange;
-  } */
