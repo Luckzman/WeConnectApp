@@ -1,6 +1,6 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
-import app from '../app';
+import app from '../../index';
 import user from '../models/user';
 
 describe('POST /api/v1/auth/signin Route Test', () => {
