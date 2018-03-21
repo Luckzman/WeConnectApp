@@ -36,7 +36,6 @@
     <div class="container">
         <!-- Jumbotron Heading and Profile business Button -->
         <div class="jumbotron jumbotron-fluid text-light">
-
                 <h1 class="display-4 lead">WeConnect</h1>
                 <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
                 <a class="btn btn-success btn-lg" data-toggle="modal" data-target="#businessProfile">Create Profile</a>
@@ -44,16 +43,14 @@
         <!-- </div> -->
 
         <!-- Use Bootstrap card to implement each card -->
-        
             <div class="row">
                 <div class="col-md-4 text-center pb-5">
                     <div class="card">
-                        <a href="profile.html">
                             <img class="card-img-top" src="img/card_img_1.jpg" alt="Card image cap">
-                        </a>
                         <div class="card-body">
                             <h5 class="card-title">X-Plug Nig. Ltd</h5>
                             <p class="card-text">The website designing and maintenance done by X-Plug Solutions team is excellent and awesome. This team has always been on time and on site, taking more than enough care for my business website</p>
+                            <a href="profile.html"><small class="see-more-link">see more details...</small></a>
                         </div>
                         <div class="card-footer">
                             <small class="text-muted">2 reviews</small>
@@ -67,12 +64,11 @@
                 
                 <div class="col-md-4 text-center pb-5">
                     <div class="card">
-                        <a href="profile.html">
                             <img class="card-img-top" src="img/card_img_2.jpg" alt="Card image cap">
-                        </a>
                         <div class="card-body">
                             <h5 class="card-title">SISA Travels and Tours</h5>
                             <p class="card-text">SISA has stepped up their game with their lead generation. You have got to check this out yourself to understand. It's quite impressive,we get a minimum of 5-10 leads daily.</p>
+                            <a href="profile.html"><small class="see-more-link">see more details...</small></a>
                         </div>
                         <div class="card-footer">
                             <small class="text-muted">1 review</small>
@@ -90,7 +86,7 @@
 
     <!-- Business Profile Modal -->
     <div class="modal fade" id="businessProfile" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-dialog-centered profile-modal" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Business Profile Form</h5>
@@ -106,7 +102,7 @@
                         </div>
                         <div class="form-group mb-3">
                             <label for="product">Product &amp; Services</label>
-                            <textarea type="password" class="form-control" id="product" rows="3"></textarea>
+                            <input type="text" class="form-control" id="product" rows="3">
                         </div>
                         <div class="form-group mb-3">
                             <label for="address">Business Address</label>

@@ -2,7 +2,6 @@ import businesses from '../models/business';
 
 const errorMessage = (res, message) => res.status(400).json({
   message,
-  error: true,
 });
 
 const businessValidator = {
@@ -78,7 +77,6 @@ const businessValidator = {
 
     const errors = req.validationErrors();
     if (errors) { return errorMessage(res, errors[0].msg); }
-
     next();
   },
 };
