@@ -4,7 +4,7 @@ import logger from 'morgan';
 import bodyParser from 'body-parser';
 import expressValidator from 'express-validator';
 import cors from 'cors';
-import Router from '../server/routes/index';
+import Router from './server/index';
 
 const app = express();
 app.use(cors());
