@@ -1,9 +1,9 @@
 module.exports = (sequelize, DataTypes) => {
-  const Business = sequelize.define('Business', {
+  const Reviews = sequelize.define('Reviews', {
     name: DataTypes.STRING,
   }, {});
-  Business.associate = (models) => {
+  Reviews.associate = (models) => {
     // associations can be defined here
   };
-  return Business;
+  return Reviews;
 };
