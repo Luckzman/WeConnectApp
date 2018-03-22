@@ -7,7 +7,7 @@
     "start": "nodemon index.js --exec babel-node",
     "build": "babel server -d dist",
     "serve": "node dist/index.js",
-    "test": "nyc mocha --require babel-register server/test && rm npm-debug.log --exit",
+    "test": "nyc --report --reporter=text mocha ./server/test/**/*.js --exit --compilers js:babel-register",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "keywords": [],
