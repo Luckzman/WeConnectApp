@@ -4,8 +4,6 @@ import logger from 'morgan';
 import bodyParser from 'body-parser';
 import expressValidator from 'express-validator';
 import cors from 'cors';
-import swaggerUi from 'swagger-ui-express';
-import swaggerDocument from './swagger.json';
 import Router from './server/index';
 
 const app = express();
@@ -14,7 +12,7 @@ app.use(logger('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(expressValidator());
-app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use(express.static(path.join(__dirname, './../template')));
 
 app.use('/', Router);
 
