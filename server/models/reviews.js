@@ -3,7 +3,10 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
   }, {});
   Reviews.associate = (models) => {
-    // associations can be defined here
+    Reviews.belongsTo(models.Business, {
+      foreignKey: 'businessId',
+      onDelete: 'CASCADE',
+    });
   };
   return Reviews;
 };
